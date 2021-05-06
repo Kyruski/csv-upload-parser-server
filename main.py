@@ -14,7 +14,8 @@ def hello_world():
 @app.route('/file', methods=['POST'])
 def parseFile():
     f = request.files['File']
-    read_file(f)
+    xAxis = request.form['xAxis']
+    read_file(f, xAxis)
     return f.filename
 
 

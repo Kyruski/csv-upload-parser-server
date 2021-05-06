@@ -1,6 +1,7 @@
 import pandas as pd
 
 
-def read_file(file):
+def read_file(file, xAxis):
     df = pd.read_csv(file)
-    print(df)
+    if xAxis == 'columns':
+        df = df.transpose()
