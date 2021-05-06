@@ -1,5 +1,6 @@
 from flask import Flask, request, Response
 from flask_cors import CORS
+from pdmanipulate import read_file
 
 app = Flask(__name__)
 CORS(app)
@@ -13,6 +14,7 @@ def hello_world():
 @app.route('/file', methods=['POST'])
 def parseFile():
     f = request.files['File']
+    read_file(f)
     return f.filename
 
 
