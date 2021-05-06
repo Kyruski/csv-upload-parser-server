@@ -15,8 +15,7 @@ def hello_world():
 def parseFile():
     f = request.files['File']
     xAxis = request.form['xAxis']
-    read_file(f, xAxis)
-    return f.filename
+    return read_file(f, xAxis)
 
 
 if __name__ == "__main__":
