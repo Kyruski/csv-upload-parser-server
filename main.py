@@ -4,9 +4,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-app.debug = True
-app.config['DEBUG'] = True
-
 
 @app.route('/')
 def hello_world():
@@ -17,3 +14,7 @@ def hello_world():
 def parseFile():
     f = request.files['File']
     return f.filename
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
